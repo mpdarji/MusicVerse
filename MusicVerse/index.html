@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MusicVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">♪</span>
+        <div>
+          <h1>MusicVerse</h1>
+          <p class="slogan">Discover. Explore. Feel the Music.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTROLS -->
+  <section class="controls-bar">
+    <div class="controls-inner">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search by artist name…" autocomplete="off" />
+      </div>
+      <div class="filters">
+        <select id="sortSelect">
+          <option value="default">Sort: Default</option>
+          <option value="year-desc">Year: Newest First</option>
+          <option value="year-asc">Year: Oldest First</option>
+          <option value="name-asc">Album: A → Z</option>
+          <option value="name-desc">Album: Z → A</option>
+        </select>
+        <select id="genreFilter">
+          <option value="all">All Genres</option>
+        </select>
+        <button id="resetBtn">✕ Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS INFO -->
+  <div class="results-info">
+    <span id="resultCount"></span>
+  </div>
+
+  <!-- ALBUM GRID -->
+  <main>
+    <div id="musicContainer"></div>
+    <div id="noResults" class="no-results hidden">
+      <span class="no-results-icon">🎵</span>
+      <p>No albums found. Try a different search or filter.</p>
+      <button onclick="resetAll()">Clear filters</button>
+    </div>
+    <div id="loadingState" class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading albums…</p>
+    </div>
+  </main>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>MusicVerse &mdash; WEB700 Project Part 1 &mdash; Data sourced from <a href="https://www.theaudiodb.com" target="_blank">TheAudioDB</a></p>
+    <p class="footer-sub">Built with HTML, CSS &amp; JavaScript &bull; Course: WEB700 Web Programming</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
